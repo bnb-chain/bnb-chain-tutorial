@@ -1,0 +1,32 @@
+{
+  "name": "helloworld",
+  "version": "1.0.0",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/main.js",
+    "dev": "node_modules/.bin/webpack && node server/main.js",
+    "webpack": "node_modules/.bin/webpack --watch",
+    "build": "npx webpack "
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@metamask/detect-provider": "^1.2.0",
+    "@rails/webpacker": "^5.4.3",
+    "@truffle/hdwallet-provider": "^2.0.9",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "node_modules-path": "^2.0.5",
+    "truffle-hdwallet-provider": "^1.0.17",
+    "webpack": "4",
+    "webpack-cli": "^4.10.0"
+  },
+  "devDependencies": {
+    "truffle-contract": "^4.0.31"
+  },
+  "description": ""
+}
