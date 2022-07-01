@@ -1,6 +1,19 @@
 # BSC Hello World Tutorial
 
 ## Overview
+An easy-to-understand tutorial for newbies to develop smart contact on BNB Smart Chain. In this tutorial, we provide a  step-by-step guide on how to develop a full-stack Hello World Smart dApp that is used for storing and retrieving data from the BSC blockchain. The technology stack used includes Solidity, Truffle, Ganache, Web3.js, and Node js. This smart contract is then deployed on the BNB Smart Chain Testnet.
+
+## What You Will Learn
+Through this tutorial, you will learn 
+- MetaMask Wallet connectivity to BSC Testnet;
+- Smart-contract development;
+- Using truffle and ganache for local development and testing;
+- Unit testing of smart contracts;
+- Deploying smart contracts on BSC Testnet;
+- Front-end integration with smart contract using web3.js library;
+
+## Target audience
+This tutorial aims to provide adequate information to anyone who wants to learn dApp development on BNB Smart Chain.
 
 ## Prerequisites
   - node --version
