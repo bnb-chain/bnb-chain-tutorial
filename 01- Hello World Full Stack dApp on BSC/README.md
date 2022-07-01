@@ -31,9 +31,9 @@ This tutorial aims to provide adequate information to anyone who wants to learn 
 ## Setup
 
 1. **Clone the repository**
-```gh repo clone RumeelHussainbnb/BSC-Hello-World-Tutorial```
+```gh repo clone https://github.com/bnb-chain/bnb-chain-tutorial```
 2. **Change the current directory**
-```cd BSC-Hello-World-Tutorial```
+```cd 01- Hello World Full Stack dApp on BSC```
 3. **Install all the dependencies (node modules)**
 ```npm install```
 4. Create a ```.secret``` file with the secret phrase of MetaMask. Refer [here](https://metamask.zendesk.com/hc/en-us/articles/360015290032-How-to-reveal-your-Secret-Recovery-Phrase) for details on how to get MetaMask secret phrase.   
@@ -135,4 +135,4 @@ HelloWorld.
   4 passing (5s)
 ```
 ## Contact
-For more inquiries and conversations, feel free to contact me at rumeelhussain@live.com | rumeelhussain123@gmail.com
+For more inquiries and conversations, feel free to contact us at our [Discord Channel](https://discord.com/channels/789402563035660308/912296662834241597)
