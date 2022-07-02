@@ -25,9 +25,13 @@ This tutorial aims to provide adequate information to anyone who wants to learn 
 1. **Clone the repository** ```gh repo clone https://github.com/bnb-chain/bnb-chain-tutorial```
 2. **Change the current directory** ```cd 02-BSC-Block-Explorer```
 3. **Install all the dependencies (node modules)** ```npm install```
-   1. **Include Nodereal Meganode API Key** make sure to include the HTTP link for the Nodereal Meganode API in the ```index.html``` as shown in the figure below. For this project we have used the public API key, for a complete is of Nodereal Meganode Public API keys, refer [here](https://docs.nodereal.io/nodereal/meganode/meganode-api-overview/public-api-key). You can also create your own Meganode application as use its API key, for more details refer [here](https://docs.nodereal.io/nodereal/meganode/getting-started). To get more details on how to find your API key, refer [here](https://docs.nodereal.io/nodereal/meganode/getting-started#find-your-api-key).
-   
+4. **Include Nodereal Meganode API Key** make sure to include the HTTP link for the Nodereal Meganode API in the ```index.html``` as shown in the figure below. 
+
 ![img](img/screenshot2.png)
+
+5. For this project we have used the public API key as shown in the figure below. For a complete is of Nodereal Meganode Public API keys, refer [here](https://docs.nodereal.io/nodereal/meganode/meganode-api-overview/public-api-key).
+   
+![img](img/screenshot3.png)
 
 5. **Install htpp-server** ```npm install -g http-server```
 6. **Run the application** ```http-server```
@@ -62,9 +66,7 @@ This tutorial aims to provide adequate information to anyone who wants to learn 
 
 ![img](img/screenshot2.png)
 
-- For this project we have used the public API key for BSC Testnet as shown in the figure below. For a complete list of Nodereal Meganode Public API keys, refer [here](https://docs.nodereal.io/nodereal/meganode/meganode-api-overview/public-api-key). 
-
-![img](img/screenshot3.png)
+- For this project we have used the public API key for BSC Testnet. For a complete list of Nodereal Meganode Public API keys, refer [here](https://docs.nodereal.io/nodereal/meganode/meganode-api-overview/public-api-key). 
 
 ### How to Use
 - Run the application using the command ```http-server``` from the root directory of the project.
