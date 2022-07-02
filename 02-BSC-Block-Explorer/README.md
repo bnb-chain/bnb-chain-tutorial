@@ -38,6 +38,7 @@ This tutorial aims to provide adequate information to anyone who wants to learn 
 ```
 
 ## Structure
+```
 02-BSC-Block-Explorer.
 |   index.html
 |   list.txt
@@ -51,7 +52,7 @@ This tutorial aims to provide adequate information to anyone who wants to learn 
 |       
 \---js
         web3.min.js
-        
+```        
 
 ## How it Works
 ### Checklist
