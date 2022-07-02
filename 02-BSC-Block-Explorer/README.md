@@ -1,7 +1,7 @@
 # BSC Hello World Tutorial
 
 ## Overview
-Designed for anyone wanting to learn blockchain development, this tutorial provides a step-by-step guide on how to develop a block explorer that uses the Nodereal API to fetch details from the BNB Smart Chain blockchain for the given transaction hash. The technology stack used in this tutorial includes Web3.js, Nodereal MegaNode, and http-server. 
+Designed for anyone wanting to learn development on the BNB Smart Chain, this tutorial provides a step-by-step guide on how to develop a block explorer that uses the Nodereal API to fetch details from the BNB Smart Chain blockchain for the given transaction hash. The technology stack used in this tutorial includes Web3.js, Nodereal MegaNode, and http-server. 
 
 ## What You Will Learn
 Through this tutorial, you will learn 
