@@ -58,7 +58,13 @@ This tutorial aims to provide adequate information to anyone who wants to learn 
 ### Checklist
 - Make sure you have installed all the dependences using the ```npm install``` command.
 - Make sure you have installed http-server using the ```npm install -g http-server``` command.
-- Before running the application, make sure that you have included the HTTP link for the Nodereal Meganode API in the index.html as shown in the figure below. For this project we have used the public API key, for a complete is of Nodereal Meganode Public API keys, refer [here](https://docs.nodereal.io/nodereal/meganode/meganode-api-overview/public-api-key). You can also create your own Meganode application as use its API key, for more details refer [here](https://docs.nodereal.io/nodereal/meganode/getting-started). To get more details on how to find your API key, refer [here](https://docs.nodereal.io/nodereal/meganode/getting-started#find-your-api-key).
+- Before running the application, make sure that you have included the HTTP link for the Nodereal Meganode API in the ```index.html``` as shown in the figure below.
+
+![img](img/screenshot2.png)
+
+- For this project we have used the public API key for BSC Testnet as shown in the figure below. For a complete list of Nodereal Meganode Public API keys, refer [here](https://docs.nodereal.io/nodereal/meganode/meganode-api-overview/public-api-key). 
+
+![img](img/screenshot3.png)
 
 ### How to Use
 - Run the application using the command ```http-server``` from the root directory of the project.
