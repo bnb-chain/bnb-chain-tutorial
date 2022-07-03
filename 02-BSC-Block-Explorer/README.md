@@ -1,4 +1,4 @@
-# BSC Hello World Tutorial
+# BSC Block Explorer Tutorial
 
 ## Overview
 Designed for anyone wanting to learn development on the BNB Smart Chain, this tutorial provides a step-by-step guide on how to develop a block explorer that uses the Nodereal API to fetch details from the BNB Smart Chain blockchain for the given transaction hash. The technology stack used in this tutorial includes Web3.js, Nodereal MegaNode, and http-server. 
@@ -29,7 +29,7 @@ This tutorial aims to provide adequate information to anyone who wants to learn 
 
 ![img](img/screenshot2.png)
 
-5. For this project we have used the public API key as shown in the figure below. For a complete is of Nodereal Meganode Public API keys, refer [here](https://docs.nodereal.io/nodereal/meganode/meganode-api-overview/public-api-key).
+5. For this project we have used the BSC Testnet public API key as shown in the figure below. For a complete list of Nodereal Meganode Public API keys, refer [here](https://docs.nodereal.io/nodereal/meganode/meganode-api-overview/public-api-key).
    
 ![img](img/screenshot3.png)
 
