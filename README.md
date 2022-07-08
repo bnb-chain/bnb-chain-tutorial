@@ -8,4 +8,5 @@ Covers:
 - Truffle
 
 ### Organization
-- **01-BSC Hello World Full Stack dApp:** Tutorial on how to develop a simple full stack dapp with front-end integration on BSC Testnet.
+- **01-BSC Hello World Full Stack dApp:** Tutorial on how to develop a simple full-stack dapp with front-end integration on BSC Testnet.
+- **02-BSC Block Explorer:** Tutorial on how to develop a simple full-stack dapp that can fetch transaction details from a user given transaction hash.
