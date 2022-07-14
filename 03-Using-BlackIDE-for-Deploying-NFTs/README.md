@@ -64,7 +64,7 @@ We aim to keep this tutorial as simple as possible and hence tend to use as mini
 ![image](https://user-images.githubusercontent.com/93580180/177943065-cc591abd-d856-4c9c-bbef-94b2e826af7f.png)
 
 ## Write your smart contract code
-8.	Copy the following code into your smart contract file. We have used the contract code from this [repo](https://github.com/RumeelHussainbnb/ERC721_NFT/blob/main/BSC-NFT.sol).
+8.	Copy the following code into your smart contract file. We have used the contract code from the [ERC721_NFT.sol](ERC721_NFT.sol) file in this repo.
 9.	Remember to change the ```MINT_PRICE```, ```MAX_SUPPLY```, ```name```, and ```symbol``` of the token as per your need. Also, remember to change the ```_baseURI``` as per your token.
 10.	
 ![image](https://user-images.githubusercontent.com/93580180/177949895-a095fdb5-f770-4530-84f6-8854a0d7a5eb.png)
