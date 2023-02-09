@@ -1,277 +1,141 @@
 
-# Using Hardhat for Deploying Smart Contracts on BSC
+# Using Chain IDE for Deploying Smart Contracts on BSC
 
-In this tutorial, we explain step-by-step how to create, compile and deploy a simple smart contract on the BSC Testnet using Hardhat.
+In this tutorial, we explain step-by-step how to create, compile and deploy a simple smart contract on the BSC Testnet using Chain IDE.
 
-## What is Hardhat
+## What is Chain IDE?
 
-Hardhat is a development environment to compile, deploy, test, and debug your smart contract.
+[ChainIDE](https://chainide.com/) is a chain agnostic, cloud-based IDE for creating decentralized applications. It enhances the development cycle through pre-configured plugins that save users' time and effort. This is a beginner guide on creating a simple smart contract and deploying it to the BNB Smart Chain. If you have any questions, feel free to ask them in the [ChainIDE Discord](https://discord.gg/QpGq4hjWrh).
 
-## Setting up the development environment
+## Pre-requisites
 
-There are a few technical requirements before we start. 
+1.  ChainIDE
+2.  Web3 Wallet
+3.  Solidity
 
-### Pre-requisites
+## What You'll Do
 
-There are a few technical requirements before we start as listed below:
+The following are general steps for deploying a storage smart contract
 
-- [Node.js v10+ LTS and npm](https://nodejs.org/en/) (comes with Node)
-- [Git](https://git-scm.com/)
-- Create an empty project ```npm init --yes```
-- Once your project is ready, run ```npm install --save-dev hardhat``` to install Hardhat.
-- Install hardhat toolbox ```npm install @nomicfoundation/hardhat-toolbox```
-- To use your local installation of Hardhat, you need to use `npx` to run it (i.e. `npx hardhat`).
-
-## Create A Project
-
-- To create your Hardhat project run ```npx hardhat``` in your project folder to intialize your project. 
-- Select ```Create an empty hardhat.config.js``` with your keyboard and hit enter.
-
-```
-$ npx hardhat
-888    888                      888 888               888
-888    888                      888 888               888
-888    888                      888 888               888
-8888888888  8888b.  888d888 .d88888 88888b.   8888b.  888888
-888    888     "88b 888P"  d88" 888 888 "88b     "88b 888
-888    888 .d888888 888    888  888 888  888 .d888888 888
-888    888 888  888 888    Y88b 888 888  888 888  888 Y88b.
-888    888 "Y888888 888     "Y88888 888  888 "Y888888  "Y888
-
-Welcome to Hardhat v2.10.1
-
-√ What do you want to do? · Create a JavaScript project
-√ Hardhat project root: ·  Project-Directory
-√ Do you want to add a .gitignore? (Y/n) · y
-
-You need to install these dependencies to run the sample project:
-npm WARN config global `--global`, `--local` are deprecated. Use `--location=global` instead.
-  npm install --save-dev "hardhat@^2.10.1" "@nomicfoundation/hardhat-toolbox@^1.0.1"
-
-Project created
-
-See the README.md file for some example tasks you can run
-
-Give Hardhat a star on Github if you're enjoying it!
-
-     https://github.com/NomicFoundation/hardhat
-```
-
-When Hardhat is run, it searches for the closest ```hardhat.config.js``` file starting from the current working directory. This file normally lives in the root of your project and an empty ```hardhat.config.js``` is enough for Hardhat to work. The entirety of your setup is contained in this file.
-
+1.  Setting up a Wallet
+2.  Write down a Storage Smart Contract
+3.  Compile a Storage Smart Contract
+4.  Deploy a Storage Smart Contract
+5.  Create a Flattened File using Flattener Library
+6.  Verify a Storage Smart Contract
+7.  Contract Interaction
 
-## Create Smart Contract
+## Setting up a Wallet
 
-You can write your own smart contract or download the [BEP20 token smart contract template](https://github.com/bnb-chain/bsc-genesis-contract/blob/master/contracts/bep20_template/BEP20Token.template), place it in the ```contracts``` directory of your project and remane it as ```BEP20Token.sol```.
+### Install Binance Wallet/MetaMask
 
-## Configure Hardhat for BSC
+When deploying a smart contract to a blockchain or when making a transaction to a deployed smart contract, a gas fee must be paid, and for that, we need to use a crypto wallet which can be Binance Wallet or MetaMask. If you want to use Binance Wallet, click [here](https://chrome.google.com/webstore/detail/binance-wallet/fhbohimaelbohpjbbldcngcnapndodjp) to get Binance Wallet and if you want to continue with MetaMask Wallet, click [here](https://metamask.io/) to install MetaMask.
 
-- Go to ```hardhat.config.js```
-- Update the  config with bsc-network-crendentials.
+### Adding BNB Smart Chain Test Network to MetaMask Wallet
 
-```js
-require("@nomicfoundation/hardhat-toolbox");
+Visit [ChainIDE](https://chainide.com/), create a project, and click on the "unconnected button" in the upper right corner, select the "Injected Web3 Provider" button, and then click the "MetaMask" to connect to the MetaMask wallet ("BNB Chain Mainnet" is the main network, and "BNB Chain Testnet" is the test network, click on the "BNB Chain Testnet" and it will be added to your MetaMask wallet.
+![](<https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/Untitled+design+(19).png>)
 
-const { mnemonic } = require('./secrets.json');
+### Enabling the BNB Smart Chain Test Network to Binance Wallet
 
-// This is a sample Hardhat task. To learn how to create your own go to
-// https://hardhat.org/guides/create-task.html
-task("accounts", "Prints the list of accounts", async () => {
-  const accounts = await ethers.getSigners();
+If you want to continue with Binance Wallet, install Binance Wallet, and After installing Binance Wallet, you need to enable "Show Test Networks" and switch to the "BNB Smart Chain Test Network".
 
-  for (const account of accounts) {
-    console.log(account.address);
-  }
-});
+<img src="https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/16.png" alt="img" style={{zoom:"50%"}}/>
 
-// You need to export an object to set up your config
-// Go to https://hardhat.org/config/ to learn more
+### Obtaining Test BNB tokens
 
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
-module.exports = {
-  defaultNetwork: "mainnet",
-  networks: {
-  	localhost: {
-      url: "http://127.0.0.1:8545"
-    },
-    hardhat: {
-    },
-    testnet: {
-      url: "https://data-seed-prebsc-1-s1.binance.org:8545",
-      chainId: 97,
-      gasPrice: 20000000000,
-      accounts: {mnemonic: mnemonic}
-    },
-    mainnet: {
-      url: "https://bsc-dataseed.binance.org/",
-      chainId: 56,
-      gasPrice: 20000000000,
-      accounts: {mnemonic: mnemonic}
-    }
-  },
-  solidity: {
-  version: "0.8.9",
-  settings: {
-    optimizer: {
-      enabled: true
-    }
-   }
-  },
-  paths: {
-    sources: "./contracts",
-    tests: "./test",
-    cache: "./cache",
-    artifacts: "./artifacts"
-  },
-  mocha: {
-    timeout: 20000
-  }
-};
-
-```
-
-:::note
-		It requires mnemonic to be passed in for Provider, this is the seed phrase for the account you'd like to deploy from. Create a new `secrets.json` file in root directory and enter your 12 word mnemonic seed phrase to get started. To get the seedwords from metamask wallet you can go to Metamask Settings, then from the menu choose Security and Privacy where you will see a button that says reveal seed words.
-```
-Sample secrets.json
-
-{
-    "mnemonic": "Your_12_Word_MetaMask_Seed_Phrase"
-}
-```
-:::
-
-## Compile Smart Contract
-
-To compile a Hardhat project, change to the root of the directory where the project is located and then type the following into a terminal:
-
-```
-npx hardhat compile
-```
-
-## Deploy Smart Contract on BSC Network
-
-- Copy and paste the following content into the ```scripts/deploy.js``` file.
-
-```js
-async function main() {
-  const [deployer] = await ethers.getSigners();
-
-  console.log("Deploying contracts with the account:", deployer.address);
-
-  console.log("Account balance:", (await deployer.getBalance()).toString());
-
-  const Token = await ethers.getContractFactory("BEP20Token");
-  const token = await Token.deploy();
-
-  console.log("Token address:", token.address);
-}
-
-main()
-  .then(() => process.exit(0))
-  .catch((error) => {
-    console.error(error);
-    process.exit(1);
-  });
-
-```
-
-- Run this command in root of the project directory:
-
-```js
-$  npx hardhat run --network testnet scripts/deploy.js
-```
-- Sample Output
-
-```
-$ npx hardhat run --network testnet scripts/deploy.js
-Deploying contracts with the account: 0x27cf2CEAcdedce834f1673005Ed1C60efA63c081
-Account balance: 100721709119999208161
-Token address: 0xbF39886B4F91F5170934191b0d96Dd277147FBB2
-```
-> Remember your address, transaction_hash and other details provided would differ, Above is just to provide an idea of structure.
-
-**Congratulations!** You have successfully deployed BEP20 Smart Contract. Now you can interact with the Smart Contract.
-
-You can check the deployment status here: <https://bscscan.com/> or <https://testnet.bscscan.com/>
-
-## Verify with Hardhat
-
-Hardhat has an Etherscan plugin: [Hardhat Etherscan plugin](https://hardhat.org/plugins/nomiclabs-hardhat-etherscan.html)
-
-> Note: Hardhat was previously Buidler.
-
-### Install the plugin
-
-```
-npm install --save-dev @nomiclabs/hardhat-etherscan
-```
-
-### Configure the EthereScan plugin in hardhat.config.js
-
-- Step1: Add ```require("@nomiclabs/hardhat-etherscan");```
-- Step2: Add your Bscscan API key. Register and obtain your API key from <https://bscscan.com/myapikey> .
-- Step3: Always remember to set the solidity compiler version to match what was used for deploying the smart contract.
-
-!!! warning
-    Keep your API key as secret and never it commit to version control
-
-
-```js
-// hardhat.config.js
-const { mnemonic, bscscanApiKey } = require('./secrets.json');
-
-require('@nomiclabs/hardhat-ethers');
-require("@nomiclabs/hardhat-etherscan");
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
-module.exports = {
-
-  networks: {
-    testnet: {
-      url: `https://data-seed-prebsc-1-s1.binance.org:8545`,
-      accounts: {mnemonic: mnemonic}
-    },
-    mainnet: {
-      url: `https://bsc-dataseed.binance.org/`,
-      accounts: {mnemonic: mnemonic}
-    }
-  },
-
-  etherscan: {
-    // Your API key for Etherscan
-    // Obtain one at https://bscscan.com/
-    apiKey: bscscanApiKey 
-  },
-  solidity: "0.8.9"
-};
-```
-### Verify Command
-!!! warning
-    Remove any unnecessary contracts and clear the artifacts otherwise these will also be part of the verified contract.
-
-Run the following command:
-
-```
-npx buidler verify --network mainnet DEPLOYED_CONTRACT_ADDRESS "Constructor argument 1"
-```
-
-* Example
-
-```shell
-$ npx hardhat  verify --network testnet 0xbF39886B4F91F5170934191b0d96Dd277147FBB2
-Nothing to compile
-Compiling 1 file with 0.5.16
-Successfully submitted source code for contract
-contracts/BEP20Token.sol:BEP20Token at 0xbF39886B4F91F5170934191b0d96Dd277147FBB2
-for verification on Etherscan. Waiting for verification result...
-
-Successfully verified contract BEP20Token on Etherscan.
-https://testnet.bscscan.com/address/0xbF39886B4F91F5170934191b0d96Dd277147FBB2#code
-```
+Once BNB Smart Chain Test Network has been added to MetaMask, navigate to the [BNB Smart Chain Faucet](https://testnet.binance.org/faucet-smart) to receive test tokens. Tokens are needed to pay for gas fees to deploy and interact with the smart contract. On the faucet page, paste your MetaMask wallet address. Then, click submit and the faucet will send you some test BNBs.
+![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/BNB_Smart_Chain_Faucet.png)
+
+## Write down a Storage Smart Contract
+
+You need to write down all the required functions that you want to implement in your storage smart contract. A general storage smart contract has the following functions:
+
+- `Store()`: store value in variables
+- `retrieve()`: returns the stored value
+
+The ChainIDE team has prepared a simple storage smart contract that includes all the required functions; you may use this built-in template and add/delete functions according to your requirements.
+
+Visit the [ChainIDE site](https://chainide.com/) and click on "Try Now".
+
+![](https://3869740696-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F-MYy-lqJKjq1m0yBAX4r%2Fuploads%2Fnpdf7fg51675wYmFcL6b%2Fimage.png?alt=media&token=353fc876-a319-49cb-92d5-1ed23c39aa90)
+
+Then, click on "New Project" and select "BNB Chain", and "Storage".
+
+![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/3_.png)
+
+Now, you can see the template contract, **Storage.sol**, that includes all the required functions.
+
+## Compile a Storage Smart Contract
+
+After you have completed your smart contract, it is time to compile it. To compile, navigate to the "Compile", module, choose an appropriate compiler version according to your source code, and press the "Compile" button. An ABI and bytecode for the source code generate upon successful compilation. If there are some errors in your source code, they will be displayed under the output panel in the "Logger module". You may need to carefully read the error, resolve it accordingly and compile the contract again.
+
+Note down the compiler version and the license for your source code as it would be needed when you verify your smart contract on the BNB Smart Chain Test Network.
+
+![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/4.png)
+
+## Deploy a Storage Smart Contract
+
+After successful compilation, it's time to deploy your compiled storage smart contract to the BNB Smart Chain Test Network. For that, you need to have a MetaMask installed, the BNB Smart Chain Test Network added to your wallet, and some testnet tokens to pay for the transaction fee.
+
+Navigate to the "Deploy & Interaction" module and choose the smart contract that you want to deploy among the compiled smart contracts and click the "deploy" button. For this tutorial, the `Storage` smart contract will be deployed.
+
+![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/5.png)
+
+## Create a Flattened File using Flattener Library
+
+To verify a smart contract that imports other smart contracts, we need to create a flattened file, a flattened file including all the source code of imported contracts in a single file. To create a flattened file, you need to add a "Flattener" plug-in.
+
+![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/7.png)
+
+Once the Flatterner plug-in is activated, you'll be able to access it as a separate module as shown in the figure below. Choose the compiled file, and click on the flatten button to create a flattened file, once the flattened file is created, it will be automatically copied to the clipboard, you may paste it to a file and save it for later usage.
+
+![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/8.png)
+
+If you want to save the flattened file, click the save button, and a flattened file will be saved in the current repository.
+
+![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/9.png)
+
+The saved flattened file can be accessed under the explorer module.
+
+![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/10.png)
+
+## Verify a Smart Contract
+
+To verify a smart contract, you need to visit [BNB Smart Chain Explorer](https://bscscan.com/) and search for the deployed smart contract using the contract address.
+
+![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/10.png)
+
+Click on the "verify and publish" link shown under the contract section.
+
+![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/11.png)
+
+Once you click on the verify and publish link, you will be asked for the following:
+
+- Contract Address: The address of a deployed smart contract that you want to verify
+- Compiler Type: Either you want to verify a single file or multiple files
+- Compiler Version: The compiler version that you used to compile the smart contract
+- License: Open-source license type that you used for your source code
+
+![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/12.png)
+
+After that, you need to paste the flattened file that you created in step 5, and your smart contract will be verified.
+
+![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/13.png)
+
+If there are no issues with your smart contract, it would be verified, and you'll be able to see an image similar to the one that is shown below.
+
+![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/14.png)
+
+![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/15.png)
+Congratulations, you have successfully deployed your smart contract to the blockchain and verified it, now it's time to interact with your deployed smart contract.
+
+## Contract Interaction
+
+After successful deployment and verification. All the functions in the deployed smart contract can be seen in the "INTERACT" panel. In our scenario, we have two functions, `Store()` that is used to store the value to the blockchain, and `Retrieve()` to retrieve stored data from the blockchain.
+
+![](https://d3gvnlbntpm4ho.cloudfront.net/Using+ChainIDE+BNB+Smart+Chain/6.png)
+
 
 ## Conclusion
-This tutorial guided you through the basics of creating and deploying a simple smart contract using the Hardhat IDE. It also provides step-by-step guide on how to verify your deployed smart contract. This tutorial uses testnet, however, the exact same instructions and sequence will work on the mainnet as well.
+This tutorial guided you through the basics of creating and deploying a simple smart contract using the Chain IDE. It also provides step-by-step guide on how to verify your deployed smart contract. This tutorial uses testnet, however, the exact same instructions and sequence will work on the mainnet as well.
