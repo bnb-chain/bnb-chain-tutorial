@@ -1,0 +1,41 @@
+{
+  "name": "scryptsy",
+  "version": "2.1.0",
+  "description": "Pure JavaScript implementation of the scrypt key deriviation function that is fully compatible with Node.js and the browser.",
+  "main": "lib/index.js",
+  "author": "",
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "devDependencies": {
+    "coveralls": "^3.0.3",
+    "mocha": "^6.0.2",
+    "mochify": "^6.1.0",
+    "nyc": "^13.3.0",
+    "standard": "^12.0.1"
+  },
+  "dependencies": {},
+  "repository": {
+    "url": "git@github.com:cryptocoinjs/scryptsy.git",
+    "type": "git"
+  },
+  "keywords": [
+    "crytpo",
+    "cryptography",
+    "scrypt",
+    "kdf",
+    "litecoin",
+    "dogecoin",
+    "bitcoin",
+    "bip38"
+  ],
+  "scripts": {
+    "test": "mocha --ui bdd",
+    "unit": "mocha",
+    "coverage": "nyc --check-coverage --statements 80 --branches 60 --functions 90 --lines 90 mocha",
+    "coveralls": "npm run-script coverage && coveralls < coverage/lcov.info",
+    "browser-test": "mochify --wd -R spec",
+    "lint": "standard"
+  }
+}
