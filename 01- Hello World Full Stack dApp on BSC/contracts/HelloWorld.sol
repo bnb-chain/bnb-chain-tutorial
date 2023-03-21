@@ -7,7 +7,7 @@ contract HelloWorld {
 string defaultName;
 mapping (address => string) public accounts; 
  
-constructor() public{
+constructor() {
     defaultName = 'World';
 }
 
