@@ -47,6 +47,20 @@ This tutorial aims to provide adequate information to anyone who wants to learn 
   
 >**Note:**    _Make Sure Nothing is Running on localhost:3000_
 
+## npm Error Handling
+- If you encounter an error while running on local host, run `npm install --save-dev lite-server`
+  - then run `npm start`
+
+- If your current version of Solidity is not compiling your contracts, try running the following steps to clear your cache
+  - `rm -rf build/`
+  - `rm -rf .cache/`
+  ```Reinstall the node module --> ```
+  1. `npm install @truffle/hdwallet-provider`
+  2. `rm -rf node_modules`
+  3. `npm install`
+  4. `npm install -g truffle@latest`
+```Once you do this, make sure `truffle-config.js` solc version is the same as your installed solidity version. check by running `$ truffle version` ```
+
 ## Available Scripts
 ```
   $ truffle compile
