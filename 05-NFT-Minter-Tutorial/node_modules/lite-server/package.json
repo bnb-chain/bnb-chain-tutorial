@@ -1,0 +1,43 @@
+{
+  "name": "lite-server",
+  "version": "2.6.1",
+  "description": "Lightweight development node server for serving a web app, providing a fallback for browser history API, loading in the browser, and injecting scripts on the fly.",
+  "main": "index.js",
+  "scripts": {
+    "test": "eslint *.js lib/*.js && istanbul cover _mocha -- -R spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johnpapa/lite-server.git"
+  },
+  "keywords": [
+    "angular",
+    "spa",
+    "static",
+    "server",
+    "development"
+  ],
+  "contributors": [
+    "John Papa <john@johnpapa.net>",
+    "Christopher Martin <cgmartin@gmail.com>"
+  ],
+  "license": "MIT",
+  "bin": {
+    "lite-server": "./bin/lite-server"
+  },
+  "homepage": "https://github.com/johnpapa/lite-server#readme",
+  "dependencies": {
+    "browser-sync": "^2.26.13",
+    "connect-history-api-fallback": "^1.6.0",
+    "connect-logger": "^0.0.1",
+    "lodash": "^4.17.20",
+    "minimist": "^1.2.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.13.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^8.2.1",
+    "mockery": "^2.1.0",
+    "sinon": "^9.2.1"
+  }
+}

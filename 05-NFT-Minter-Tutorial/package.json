@@ -1,0 +1,22 @@
+{
+  "name": "05-nft-minter-tutorial",
+  "version": "1.0.0",
+  "description": "",
+  "main": "truffle.config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test",
+    "start": "node server/main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "nodemon": "^2.0.22"
+  }
+}
