@@ -27,16 +27,16 @@ import {ethers} from 'ethers';
 ![ABI](./assets/images/1-abi.png)
 
 
-1. Import your Contract's ABI into `App.js` 
+7. Import your Contract's ABI into `App.js` 
 ```javascript!
 import contractABI from './ContractName.json';
 ```
-1. Import the deployed contract's address into `App.js` 
+8. Import the deployed contract's address into `App.js` 
 ```javascript!
 const contractAddress = '0x....3837837';
 ```
 
-1. We will use a wallet to connect to the RPC BNB Test Network. Then, we'll create a smart contract and use it to receive a greeting message back to our function. Additionally, we'll add a test case for further confirmation
+9. We will use a wallet to connect to the RPC BNB Test Network. Then, we'll create a smart contract and use it to receive a greeting message back to our function. Additionally, we'll add a test case for further confirmation
 
 * Import following code into `App.js`
 ```javascript!
