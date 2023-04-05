@@ -24,19 +24,19 @@ import {ethers} from 'ethers';
 
 6. Import your ABI from Remix into a json file under you `src` directory and save 
     * (*"ContractNameABI.json"*)
-![](https://hackmd.io/_uploads/S13sDdoZ3.png)
+![ABI](./assets/images/1-abi.png)
 
 
-7. Import your Contract's ABI into `App.js` 
+1. Import your Contract's ABI into `App.js` 
 ```javascript!
 import contractABI from './ContractName.json';
 ```
-8. Import the deployed contract's address into `App.js` 
+1. Import the deployed contract's address into `App.js` 
 ```javascript!
 const contractAddress = '0x....3837837';
 ```
 
-9. We will use a wallet to connect to the RPC BNB Test Network. Then, we'll create a smart contract and use it to receive a greeting message back to our function. Additionally, we'll add a test case for further confirmation
+1. We will use a wallet to connect to the RPC BNB Test Network. Then, we'll create a smart contract and use it to receive a greeting message back to our function. Additionally, we'll add a test case for further confirmation
 
 * Import following code into `App.js`
 ```javascript!
@@ -48,7 +48,7 @@ const loadData = async () => {
 }
 ```
 ### Open [Local Host](http://localhost:3000/) to see the End Result
-![](https://hackmd.io/_uploads/r1k1YOobh.png)
+![display](./assets/images/2-display.png)
 
 ### Time to Fix bugs
 10. You should be able to run the dApp, but you may have already encountered some issues.
@@ -60,7 +60,7 @@ const loadData = async () => {
 > This is a temporary solution to complete the tutorial. However, it's important to note that you can choose different ethers dependencies depending on your specific build. Keep in mind that installing necessary dependencies carries some risks. To determine which version of the ethers library you should install, check the node package manager and yarn.
 
 #### `App.js` Full Example Code
-![](https://hackmd.io/_uploads/H1BsUuo-2.png)
+![code-example](./assets/images/3-code-example.png)
 
 
 --- 
@@ -92,7 +92,7 @@ const loadData = async () => {
 * Create a **pull-request** & submit your app to show off your hacking skills !
 
 
-![](https://hackmd.io/_uploads/BkaB2_i-3.png)
+![Charity](./assets/images/4-Charity.png)
 
 ---
 --- 
@@ -149,6 +149,6 @@ Swap: [0x9a489505a00cE272eAa5e07Dba6491314CaE3796](https://testnet.bscscan.com/t
 *Charity Wallet Address* : 0x8B99F3660622e21f2910ECCA7fBe51d654a1517D
     * [ BNB to Charity example tx-Hash](https://testnet.bscscan.com/tx/0xdf76a6ad5759ef4395e512a1f4c892bd9601de50b635a1c0ec2eb8ac1178a9be)
 
-![](https://hackmd.io/_uploads/SyJ5Awjbh.png)
+![liquidity-pool](./assets/images/5-lp.png)
 
 ---
