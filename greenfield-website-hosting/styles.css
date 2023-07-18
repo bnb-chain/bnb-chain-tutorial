@@ -1,0 +1,71 @@
+/* General Styles */
+body {
+  font-family: "Times New Roman", serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F8F8F8;
+  color: #333;
+}
+
+h1, h2 {
+  font-family: "Georgia", serif;
+}
+
+/* Header Styles */
+header {
+  background-color: #D3A625;
+  padding: 20px;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #FFF;
+}
+
+/* Main Content Styles */
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+h2 {
+  color: #D3A625;
+}
+
+blockquote {
+  margin: 0;
+  padding: 10px;
+  border-left: 5px solid #D3A625;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #D3A625;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #FFF;
+}
+
+/* Image Styles */
+.plato-image {
+  width: 200px;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
