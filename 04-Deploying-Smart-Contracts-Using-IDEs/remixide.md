@@ -41,17 +41,17 @@ A contract in the sense of Solidity is a collection of code (its functions) and 
 
 ## Compile Smart Contract
 
-- Step1: Click button to switch to compile page.
+- Step 1: Click button to switch to compile page.
 
-- Step2: Select the appropriate compiler version, 0.8.15 in our case.
+- Step 2: Select the appropriate compiler version, 0.8.15 in our case.
 
-- Step3: Enable "Auto compile" and "Optimization" from Advanced Configurations,
+- Step 3: Enable "Auto compile" and "Optimization" from Advanced Configurations,
 
-- Step4: Select "HelloWorld" from the contract drop-down menu.
+- Step 4: Select "HelloWorld" from the contract drop-down menu.
 
-- Step5: Click "ABI" to copy the contract ABI and save it.
+- Step 5: Click "ABI" to copy the contract ABI and save it.
 
-<img src="https://user-images.githubusercontent.com/93580180/182833004-bd530c91-adb4-4b8c-a87b-70139ef75e35.png" alt="img" style={{zoom:"80%"}}/>
+![Image](https://user-images.githubusercontent.com/93580180/182833004-bd530c91-adb4-4b8c-a87b-70139ef75e35.png)
 
 ## Configure MetaMask and Fund Your Account
 
@@ -62,11 +62,11 @@ Now, We have to deploy our smart contract on BNB Smart Chain Network. For that, 
 
 - Go to setting page
 
-<img src="https://lh5.googleusercontent.com/NqWPIv1MrMJ-W2wDKjxtdxcdFhDwiqhsZ6G6MY6FQnhxPTCCPfPHBJ59vBl1ddxpbfV11ufETWAolV1s9YjCYHPeJCKW1S-sr8gfjcFt3swXM-p3IgafNBqPZ86DvThK-I9gKbrw" alt="img" style={{zoom:"80%"}}/>
+![Image](https://lh5.googleusercontent.com/NqWPIv1MrMJ-W2wDKjxtdxcdFhDwiqhsZ6G6MY6FQnhxPTCCPfPHBJ59vBl1ddxpbfV11ufETWAolV1s9YjCYHPeJCKW1S-sr8gfjcFt3swXM-p3IgafNBqPZ86DvThK-I9gKbrw)
 
 - Add a new network
 
-<img src="https://lh6.googleusercontent.com/jrq511YshO6rPPx4i-ePRy2gs-66b465c_JFXEW8Cm5CSNTM7CXgCPuFmIh_Im3JlEhxpAqEDDjmUqfskq2m5rG-FKhwZ4_jIenOTdAVs_rMMTjTvZlM6iOpQeivrz_V1liSvuB5" alt="img" style={{zoom:"30%"}}/>
+![Image](https://lh6.googleusercontent.com/jrq511YshO6rPPx4i-ePRy2gs-66b465c_JFXEW8Cm5CSNTM7CXgCPuFmIh_Im3JlEhxpAqEDDjmUqfskq2m5rG-FKhwZ4_jIenOTdAVs_rMMTjTvZlM6iOpQeivrz_V1liSvuB5)
 
 * Testnet
     * [RPC URLs](./rpc.md)
@@ -89,17 +89,17 @@ Now, We have to deploy our smart contract on BNB Smart Chain Network. For that, 
 
 Follow the following steps to deploy the HelloWorld smart contract on the BNB Smart Chain Testnet. 
 
-<img src="https://user-images.githubusercontent.com/93580180/182833072-ca9cbd50-253e-400b-84c5-720e0ee6bb32.png" alt="img" style={{zoom:"80%"}}/>
+![Image](https://user-images.githubusercontent.com/93580180/182833072-ca9cbd50-253e-400b-84c5-720e0ee6bb32.png)
 
-- Step1: Navigate to the Deployment Page.
-- Step2: Select Injected Provider in the Environment dropdown
-- Step3: Confirm the Connection Request on the MetaMask notification.
+- Step 1: Navigate to the Deployment Page.
+- Step 2: Select Injected Provider in the Environment dropdown
+- Step 3: Confirm the Connection Request on the MetaMask notification.
 
-<img src="https://user-images.githubusercontent.com/93580180/182833162-4aff06eb-9d20-41c0-a5b6-df996db41a1c.png" alt="img" style={{zoom:"80%"}}/>
+![Image](https://user-images.githubusercontent.com/93580180/182833162-4aff06eb-9d20-41c0-a5b6-df996db41a1c.png)
 
-- Step4: Once Metamask is connected to Remix, click on the "Deploy" button which would generate another metamask popup that requires transaction confirmation.
+- Step 4: Once Metamask is connected to Remix, click on the "Deploy" button which would generate another metamask popup that requires transaction confirmation.
 
-<img src="https://user-images.githubusercontent.com/93580180/182833376-8497b8c8-1edf-4f9f-a586-acfbe20ab696.png" alt="img" style={{zoom:"80%"}}/>
+![Image](https://user-images.githubusercontent.com/93580180/182833376-8497b8c8-1edf-4f9f-a586-acfbe20ab696.png)
 
 **Congratulations!** You have successfully deployed a simple Smart Contract on the BSC Testnet. Now you can interact with the Smart Contract. Check the deployment status here: <https://testnet.bscscan.com/>
 
